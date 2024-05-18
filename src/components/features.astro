@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
@@ -6,37 +5,32 @@ import type { FeatureItem } from "~/types";
 const features: Array<FeatureItem> = [
   {
     title: "Hairverse",
-    description:
-      "Network, promote your brand and host events in our Hairverse metaverse. Home of our future upcoming metaverse award shows",
+    description: "Network, promote your brand and host events in our Hairverse metaverse. Home of our future upcoming metaverse award shows",
     icon: "noto:sparkles",
   },
   {
     title: "Accept Crypto",
-    description: `Hair Master tier Discord subscribers receive a custom <a href="https://haircolorvet.arvrtise.link">Solana POS link</a> to accept $SOL money with $0 middleman fees.`,
-    icon: "🪙",
+    description: `Accept crypto (Bitcoin HAI$, $SOL, $USDT, $BONK and ATL Hair LUV money) with $0 middleman fees and a branded URL like <a href="https://haircolorvet.arvrtise.link">@HAIRCOLORVET</a>`,
+    icon: "tabler:coin",
   },
   {
     title: "Social Media AR Filters",
-    description:
-      "We create branded social media AR Filters on TikTok, Instagram and Facebook to allow your customers to market your brand for a discount of service.",
+    description: "We create branded social media AR Filters on TikTok, Instagram and Facebook to allow your customers to market your brand for a discount of service.",
     icon: "icon-park:camera",
   },
   {
     title: "Live Stream",
-    description:
-      "Schedule a live Discord audio event or livestream on our @ahairshow in front of our 26.5k instagram followers. Generate new clients who want to stay tapped in.",
+    description: "Schedule a live Discord audio event or livestream on our @ahairshow in front of our 26.5k Instagram followers. Generate new clients who want to stay tapped in.",
     icon: "fxemoji:studiomic",
   },
   {
     title: "No algorithms",
-    description:
-      "Upload or embed social media hair content, video reviews or how to content with a link. Level up and create your own branded channel in your your city.",
+    description: "Upload or embed social media hair content, video reviews or how-to content with a link. Level up and create your own branded channel in your city.",
     icon: "noto:level-slider",
   },
   {
     title: "Gift cards",
-    description:
-      "We offer blockchain gift cards available for purchase through Stripe. These cards enable your customers to resell them, eliminating the need to cancel a booked appointment. ",
+    description: "We offer blockchain gift cards available for purchase through Stripe. These cards enable your customers to resell them, eliminating the need to cancel a booked appointment.",
     icon: "noto:barber-pole",
   },
 ];
@@ -45,8 +39,7 @@ const Features = () => {
   return (
     <ContentSection title="Features" id="features">
       <Fragment slot="lead">
-        <span className="text-primary">Arvrtise</span> provides entrepreneurs with all of
-        the marketing tools they need to take your business to the metaverse.
+        <span className="text-primary">Arvrtise</span> provides entrepreneurs with all of the marketing tools they need to take your business to the metaverse.
       </Fragment>
       <ul className="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {features.map(({ title, description, icon }, index) => (
@@ -55,7 +48,7 @@ const Features = () => {
               <Icon name={icon} />
             </div>
             <p className="text-center font-extrabold text-xl">{title}</p>
-            <p className="text-center text-offset text-sm">{description}</p>
+            <p className="text-center text-offset text-sm" dangerouslySetInnerHTML={{ __html: description }}></p>
           </li>
         ))}
       </ul>
