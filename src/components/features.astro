@@ -1,59 +1,55 @@
+---
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Hairverse",
-    description: "Network, promote your brand and host events in our Hairverse metaverse. Home of our future upcoming metaverse award shows",
-    icon: "noto:sparkles",
+    title: "📍 What3Words",
+    description: `Create a What3Words address from your salon chair to help clients find your exact location. <a href="https://what3words.com" class="text-primary underline">What3Words →</a>`,
+    icon: "mdi:map-marker",
   },
   {
-    title: "Accept Crypto",
-    description: `Accept crypto (Bitcoin HAI$, $SOL, $USDT, $BONK and ATL Hair LUV money) with $0 middleman fees and a branded URL like <a href="https://haircolorvet.arvrtise.link">@HAIRCOLORVET</a>`,
+    title: "👻 Phantom Wallet", 
+    description: `Replace traditional POS and reward clients with Bitcoin HAIR$ for TikTok ReelViews. Eliminates payment fees. <a href="https://phantom.com" class="text-primary underline">Get Phantom →</a>`,
     icon: "tabler:coin",
   },
   {
-    title: "Social Media AR Filters",
-    description: "We create branded social media AR Filters on TikTok, Instagram and Facebook to allow your customers to market your brand for a discount of service.",
+    title: "📱 LUMEE BOOTH",
+    description: `Booking & social platform showing real-time status updates. Share availability and wait times instantly. <a href="https://app.lumeebooth.com" class="text-primary underline">LUMEE BOOTH →</a>`,
     icon: "icon-park:camera",
   },
   {
-    title: "Live Stream",
-    description: "Schedule a live Discord audio event or livestream on our @ahairshow in front of our 26.5k Instagram followers. Generate new clients who want to stay tapped in.",
+    title: "🎙️ ReelViews",
+    description: `Build TikTok reviews with QR codes clients scan to create reel video testimonials. Turn clients into marketers. <a href="https://buy.stripe.com/aFadR9aWZ3mCdt56j75wI1h" class="text-primary underline">Subscribe →</a>`,
     icon: "fxemoji:studiomic",
   },
   {
-    title: "No algorithms",
-    description: "Upload or embed social media hair content, video reviews or how-to content with a link. Level up and create your own branded channel in your city.",
+    title: "📊 TikTok Paid Ads",
+    description: `Boost posts with same-day campaigns. $500 gets 118-2,000 local leads within 5 miles. <a href="https://buy.stripe.com/your-actual-link" class="text-primary underline">Boost Post $500 →</a>`,
     icon: "noto:level-slider",
   },
   {
-    title: "Gift cards",
-    description: "We offer blockchain gift cards available for purchase through Stripe. These cards enable your customers to resell them, eliminating the need to cancel a booked appointment.",
-    icon: "noto:barber-pole",
+    title: "🎬 TikTok Management", 
+    description: `Full-service TikTok agency. $2,222/month for daily Reels, strategy, and 50K+ monthly views. <a href="https://buy.stripe.com/6oU28r0il5uK1KnePD5wI1j" class="text-primary underline">Start $2,222/mo →</a>`,
+    icon: "noto:movie-camera",
   },
 ];
+---
 
-const Features = () => {
-  return (
-    <ContentSection title="Features" id="features">
-      <Fragment slot="lead">
-        <span className="text-primary">Arvrtise</span> provides entrepreneurs with all of the marketing tools they need to take your business to the metaverse.
-      </Fragment>
-      <ul className="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ title, description, icon }, index) => (
-          <li key={index} className="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-            <div className="h-16 w-16 rounded-full border-2 border-current p-3">
-              <Icon name={icon} />
-            </div>
-            <p className="text-center font-extrabold text-xl">{title}</p>
-            <p className="text-center text-offset text-sm" dangerouslySetInnerHTML={{ __html: description }}></p>
-          </li>
-        ))}
-      </ul>
-    </ContentSection>
-  );
-};
-
-export default Features;
+<ContentSection title="Services" id="features">
+  <Fragment slot="lead">
+    <span class="text-primary">Bitco.hair</span> provides unfunded businesses with advanced tech to compete with funded franchises.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {features.map(({ title, description, icon }, index) => (
+      <li key={index} class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+        <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+          <Icon name={icon} />
+        </div>
+        <p class="text-center font-extrabold text-xl">{title}</p>
+        <p class="text-center text-offset text-sm" set:html={description}></p>
+      </li>
+    ))}
+  </ul>
+</ContentSection>

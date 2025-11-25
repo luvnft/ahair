@@ -1,88 +1,41 @@
 ---
-import CompatibilityList from "~/components/compatibility-list.astro";
+import { Image } from "astro:assets";
 import ContentSection from "~/components/content-section.astro";
-import type { CompatibilityItem } from "~/types";
+import hairverseImage from "~/assets/hairverse.jpg";
 
-const frameworks: Array<CompatibilityItem> = [
-  {
-    title: "NYC",
-    icon: "map:beauty-salon",
-    url: "https://reactjs.org/",
-  },
-  {
-    title: "NYC",
-    icon: "noto:barber-pole",
-    url: "https://preactjs.com/",
-  },
-  {
-    title: "Philly",
-    icon: "map:beauty-salon",
-    url: "https://svelte.dev/",
-  },
-  {
-    title: "Philly",
-    icon: "noto:barber-pole",
-    url: "https://vuejs.org/",
-  },
-  {
-    title: "MIA",
-    icon: "map:beauty-salon",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "MIA",
-    icon: "noto:barber-pole",
-    url: "https://lit.dev/",
-  },
-];
-
-const platforms: Array<CompatibilityItem> = [
-  {
-    title: "Hairverse",
-    icon:"emojione-monotone:sparkles",
-    url: "https://www.spatial.io/s/Hairverse-63a2cfa4d49a590001d7d5fb?share=1273140408900528653",
-  },
-  {
-    title: "Podcast",
-    icon: "mdi:podcast",
-    url: "https://arvrtise.com",
-  },
-  {
-    title: "Marketplace",
-    icon: "icon-park-outline:weixin-market",
-    url: "https://arvrtise.com",
-  },
-  {
-    title: "Local Events",
-    icon: "carbon:events",
-    url: "https://arvrtise.com",
-  },
-  {
-    title: "Award Show",
-    icon: "healthicons:award-trophy-outline",
-    url: "https://arvrtise.com",
-  },
-  {
-    title: "Salon Suites",
-    icon: "map:beauty-salon",
-    url: "https://arvrtise.com",
-  },
-];
+const widths = [800, 1200, 1600];
+const sizes = "(min-width: 1024px) 80vw, 90vw";
 ---
 
-<ContentSection title="Future" id="compatibility">
+<ContentSection title="HairVerse" id="compatibility">
   <Fragment slot="lead">
-    We're scaling <span class="text-primary">Arvrtise Hair</span> to allow
-    our tribe to own a piece of history. 
+    The first metaverse built exclusively for hair professionals. Network, showcase your work, and grow your clientele in immersive 3D spaces.
   </Fragment>
-  <CompatibilityList
-    items={frameworks}
-    title="Cities"
-    url="https://discord.com/channels/1188100125705375806/shop"
-  />
-  <CompatibilityList
-    items={platforms}
-    title="Next"
-    url="https://discord.com/channels/1188100125705375806/shop"
-  />
+  
+  <div class="max-w-4xl mx-auto">
+    <!-- Clickable 16:9 Image Container -->
+    <a 
+      href="https://www.spatial.io/s/Hairverse-63a2cfa4d49a590001d7d5fb?share=1273140408900528653"
+      target="_blank"
+      class="block group relative overflow-hidden rounded-lg bg-gray-900 aspect-video mb-6 hover:shadow-2xl transition-all duration-300"
+    >
+      <!-- Imported Hairverse Image -->
+      <Image
+        src={hairverseImage}
+        widths={widths}
+        sizes={sizes}
+        alt="HairVerse Metaverse Preview"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+      
+      <!-- H1 Overlay -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-6xl md:text-8xl font-bold text-white text-center drop-shadow-2xl">
+          ENTER
+        </h1>
+      </div>
+    </a>
+  </div>
 </ContentSection>

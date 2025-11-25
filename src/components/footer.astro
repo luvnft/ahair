@@ -1,28 +1,27 @@
 ---
 import { Icon } from "astro-icon";
 import HeroImage from "~/components/hero-image.astro";
-import type { FooterLink } from "~/types";
 
-const links: Array<FooterLink> = [
+const links = [
   {
-    url: "https://hair.arvrtise.com",
-    description: "Arvrtise Hair official website",
+    url: "https://bitco.hair",
+    description: "Bitco.Hair official website",
     icon: "openmoji:house",
   },
   {
-    url: "https://instagram.com/ahairshow",
-    description: "Arvrtise Hair on Instagram",
-    icon:"icon-park:instagram",
+    url: "https://tiktok.com/@bitcohair", 
+    description: "Bitcohair on TikTok",
+    icon: "logos:tiktok-icon",
   },
   {
-    url: "https://discord.com/channels/1188100125705375806/shop",
-    description: "Arvrtise Hair on Discord",
-    icon:"logos:discord-icon",
+    url: "https://www.spatial.io/s/Hairverse-63a2cfa4d49a590001d7d5fb?share=1273140408900528653",
+    description: "Enter HairVerse Metaverse", 
+    icon: "mdi:virtual-reality",
   },
   {
-    url: "https://tiktok.com/arvrtise",
-    description: "Arvrtise Hair on TikTok",
-    icon:"logos:tiktok-icon",
+    url: "https://app.lumeebooth.com",
+    description: "LUMEE BOOTH Booking Platform",
+    icon: "icon-park:camera",
   },
 ];
 ---
@@ -32,18 +31,17 @@ const links: Array<FooterLink> = [
     <HeroImage />
   </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
-    {
-      links.map((link) => (
-        <li>
-          <a
-            class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
-            href={link.url}
-          >
-            <span class="sr-only">{link.description}</span>
-            <Icon class="h-full" name={link.icon} />
-          </a>
-        </li>
-      ))
-    }
+    {links.map((link) => (
+      <li>
+        <a
+          class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
+          href={link.url}
+          target="_blank"
+        >
+          <span class="sr-only">{link.description}</span>
+          <Icon class="h-full" name={link.icon} />
+        </a>
+      </li>
+    ))}
   </ul>
 </footer>
